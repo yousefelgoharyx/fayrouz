@@ -1,12 +1,9 @@
 "use client";
 import SettingsItem from "../../../ui/SettingsItem";
-import Switch from "../../../ui/Switch";
-import BellIcon from "../../../icons/Bell";
-import GlobeIcon from "../../../icons/Globe";
-import MoonIcon from "../../../icons/Moon";
-import ShieldIcon from "../../../icons/Shield";
-import TrashIcon from "../../../icons/Trash";
 import { useState } from "react";
+import { Bell, Globe, Moon, Shield, Trash } from "phosphor-react";
+import Switch from "@/ui/primitives/Switch";
+
 const Page = () => {
   const [enabled, setEnabled] = useState(false);
   return (
@@ -18,31 +15,31 @@ const Page = () => {
         <SettingsItem
           title="Notifications"
           description="Receive notifications when new songs are added to the library."
-          icon={BellIcon}
+          icon={<Bell />}
         >
           <Switch onChange={() => setEnabled(!enabled)} enabled={enabled} />
         </SettingsItem>
         <SettingsItem
           title="Dark Mode"
           description="Enable dark mode for the app."
-          icon={MoonIcon}
+          icon={<Moon />}
         >
           <Switch />
         </SettingsItem>
         <SettingsItem
           title="Language"
           description="Select the language for the app."
-          icon={GlobeIcon}
+          icon={<Globe />}
         />
         <SettingsItem
           title="Password"
           description="Change your password."
-          icon={ShieldIcon}
+          icon={<Shield />}
         />
         <SettingsItem
           title="Delete Account"
           description="Delete your account and all of your data."
-          icon={TrashIcon}
+          icon={<Trash />}
         />
       </div>
     </div>

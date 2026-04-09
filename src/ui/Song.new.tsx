@@ -1,19 +1,19 @@
 "use client";
 import Image from "next/image";
 import { DotsThreeCircleVertical, Heart, PlayCircle } from "phosphor-react";
-import Spinner from "./Spinner";
+import Spinner from "./primitives/Spinner";
 
 export type UISongProps = {
   image: string;
   title: string;
   duration: string;
-  isLiked: boolean;
-  isLoading: boolean;
+  liked: boolean;
+  loading: boolean;
   onPlay: () => void;
   onLike: () => void;
 };
 const UISong = (props: UISongProps) => {
-  const { image, title, duration, isLiked, isLoading } = props;
+  const { image, title, duration, liked, loading } = props;
   const handleLike = () => {
     props.onLike();
   };
@@ -23,7 +23,7 @@ const UISong = (props: UISongProps) => {
 
   return (
     <div className="relative aspect-[6/4.5] overflow-hidden rounded-2xl">
-      <Image src={image} fill alt="Song 1" />
+      <Image src={image} className="object-cover" fill alt="Song 1" />
       <div className="absolute bottom-2 left-0 mx-2 w-[calc(100%_-_16px)] rounded-xl bg-neutral-700/30 p-3 px-4 backdrop-blur-sm">
         <div className="flex items-center justify-between gap-2">
           <div className="overflow-hidden">
@@ -37,11 +37,11 @@ const UISong = (props: UISongProps) => {
             <button onClick={handleLike}>
               <Heart
                 size={28}
-                weight={isLiked ? "fill" : "duotone"}
-                color={isLiked ? "red" : "white"}
+                weight={liked ? "fill" : "duotone"}
+                color={liked ? "red" : "white"}
               />
             </button>
-            {isLoading ? (
+            {loading ? (
               <Spinner size={28} />
             ) : (
               <PlayCircle

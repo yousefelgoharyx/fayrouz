@@ -2,14 +2,9 @@
 import Image from "next/image";
 import { PlayCircle } from "phosphor-react";
 import React from "react";
-import { usePlayer } from "../atoms/playerAtom";
-import { SongProps } from "../components/home/Song";
 import converDuration from "../utils/convertDuration";
-interface PlaylistSongProps extends SongProps {
-  rank: number;
-}
-const PlaylistSong = (props: PlaylistSongProps) => {
-  const { playSong } = usePlayer();
+
+const PlaylistSong = (props: any) => {
   return (
     <div className="flex items-center gap-2 bg-neutral-800 p-4">
       <div className="w-6">
@@ -24,7 +19,7 @@ const PlaylistSong = (props: PlaylistSongProps) => {
           {converDuration(+props.duration)}
         </h3>
       </div>
-      <button className="ml-auto text-[0px]" onClick={() => playSong(props)}>
+      <button className="ml-auto text-[0px]">
         <PlayCircle weight="duotone" size={32} />
       </button>
     </div>

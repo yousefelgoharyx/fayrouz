@@ -2,8 +2,8 @@
 import { useState } from "react";
 import EnvelopeIcon from "../../../icons/Email";
 import LockIcon from "../../../icons/Lock";
-import Button from "../../../ui/Button/Button";
-import Input from "../../../ui/Input";
+import Input from "@/ui/primitives/Input";
+import Button from "@/ui/primitives/Button";
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -38,4 +38,3 @@ const Page = () => {
 };
 
 export default Page;
-

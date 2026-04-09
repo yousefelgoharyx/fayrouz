@@ -1,6 +1,5 @@
 import { motion, useSpring, MotionConfig } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { usePlayer } from "../atoms/playerAtom";
 
 type Lyric = {
   text: string;
@@ -28,9 +27,9 @@ const LyricItem = ({ lyric, active = false, onClick }: LyricItemProps) => {
   );
 };
 const Lyrics = (props: LyricsProps) => {
+  return null;
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
-  const { audioElement } = usePlayer();
   const limit = Math.floor(height / 40);
   const [activeLyric, setActiveLyric] = useState(0);
   const y = useSpring(0);

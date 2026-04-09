@@ -1,7 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import BellIcon from "../icons/Bell";
-import CaretDownIcon from "../icons/CaretDown";
 import GearIcon from "../icons/Gear";
 import NavbarSearch from "./NavbarSearch";
 

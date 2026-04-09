@@ -6,20 +6,9 @@ const page = async () => {
   return (
     <div className="mb-8">
       <Heading title="Favourites" />
-      <Grid>
-        {/* {songs.data?.map((song: any) => (
-          <Song
-            duration={song.duration}
-            image={song.image}
-            title={song.title}
-            url={song.url}
-            key={song.id}
-          />
-        ))} */}
-      </Grid>
+      <Grid>hey</Grid>
     </div>
   );
 };
 
 export default page;
-

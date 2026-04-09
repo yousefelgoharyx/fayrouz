@@ -1,8 +1,8 @@
-import { SongProps } from "../components/home/Song";
-
-interface BootstrapMediaSession extends SongProps {
+interface BootstrapMediaSession {
   onPlay: () => void;
   onPause: () => void;
+  image: string;
+  title: string;
 }
 export function bootstrapMediaSession(options: BootstrapMediaSession) {
   navigator.mediaSession.metadata = new MediaMetadata({

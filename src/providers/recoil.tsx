@@ -6,11 +6,7 @@ import { RecoilRoot } from "recoil";
 const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <RecoilRoot>
-      <IconContext.Provider
-        value={{
-          weight: "duotone",
-        }}
-      >
+      <IconContext.Provider value={{ weight: "duotone", size: 24 }}>
         {children}
       </IconContext.Provider>
     </RecoilRoot>
@@ -18,4 +14,3 @@ const Providers = ({ children }: { children: ReactNode }) => {
 };
 
 export default Providers;
-

@@ -1,22 +1,28 @@
 import React from "react";
 import SongsCarousel from "../../ui/SongsCarousel";
-import Song from "./Song";
+import Song from "@/ui/components/Song";
+import { SongAPI } from "@/server/network/songs";
+import converDuration from "@/utils/convertDuration";
 
-async function TodaysSelection() {
+type TodaysSelectionProps = {
+  songs: SongAPI.TSong[];
+};
+function TodaysSelection({ songs }: TodaysSelectionProps) {
   return (
     <SongsCarousel>
-      {/* {songs.data?.map((song: any) => (
+      {songs.map((song) => (
         <Song
-          duration={song.duration}
-          image={song.image}
-          title={song.title}
-          url={song.url}
+          duration={converDuration(song.duration)}
+          image={`${process.env.SERVER_URL}/${song.image}`}
+          url={`${process.env.SERVER_URL}/${song.url}`}
+          name={song.name}
+          liked={false}
           key={song.id}
+          id={song.id}
         />
-      ))} */}
+      ))}
     </SongsCarousel>
   );
 }
 
 export default TodaysSelection;
-

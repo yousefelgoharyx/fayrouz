@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-import Spinner from "../Spinner";
+import Spinner from "./Spinner";
 type ButtonProps = {
   title: string;
   icon?: React.ReactNode;

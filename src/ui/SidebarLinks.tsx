@@ -1,18 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import {
-  House,
-  MusicNote,
-  Bookmark,
-  Books,
-  Playlist,
-  Gear,
-  User,
-} from "phosphor-react";
+import { usePathname } from "next/navigation";
+import { House, MusicNote, Bookmark, Books, Playlist } from "phosphor-react";
 import React from "react";
-import Tooltip from "./Tooltip";
+import Tooltip from "./primitives/Tooltip";
 const links = [
   {
     title: "Home",
@@ -43,7 +35,7 @@ const links = [
 const SidebarLinks = () => {
   const pathname = usePathname();
   return (
-    <div className=" z-50 flex flex-1 items-center justify-around gap-6 overflow-hidden border-t border-neutral-700 bg-neutral-800 py-6 lg:flex-col lg:justify-start ">
+    <div className=" z-50 flex flex-1 items-center justify-around gap-6 overflow-hidden border-t border-neutral-700 bg-neutral-800 py-6 md:flex-col md:justify-start ">
       {links.map((link) => {
         const weight = pathname === link.href ? "fill" : "duotone";
         return (
